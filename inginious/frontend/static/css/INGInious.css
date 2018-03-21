@@ -238,16 +238,16 @@ form#task label {
 .list-group.list-group-progress * {
   line-height: 22px;
 }
-.nav-breadcrumb li {
+.navbar-breadcrumb li {
   max-width: 250px;
 }
 @media screen and (max-width: 1024px) {
-  .nav-breadcrumb li {
+  .navbar-breadcrumb li {
     max-width: 150px;
   }
 }
 @media screen and (max-width: 800px) {
-  .nav-breadcrumb li {
+  .navbar-breadcrumb li {
     max-width: 120px;
   }
 }
@@ -255,13 +255,13 @@ form#task label {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-left:15px !important;
 }
 .navbar-breadcrumb li:after {
   font: normal normal normal 24px/1 FontAwesome;
   content: "\f105";
   position: absolute;
-  left: -3px;
-  top: 10px;
+  top: 20px;
   color: rgba(255, 255, 255, 0.5);
 }
 div[data-toggle="buttons"] label {
