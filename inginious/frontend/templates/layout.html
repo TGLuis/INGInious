@@ -59,7 +59,7 @@ $else:
     <script src="$get_homepath(True)/static/js/codemirror/mode/meta.js" type="text/javascript" charset="utf-8"></script>
     <script src="$get_homepath(True)/static/js/libs/tether.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="$get_homepath(True)/static/js/libs/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="$get_homepath(True)/static/js/libs/moment.js" type="text/javascript" charset="utf-8"></script>
+    <script src="$get_homepath(True)/static/js/libs/moment.js" type="text/javascript" charset="utf-8"></script>
     <script src="$get_homepath(True)/static/js/libs/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="$get_homepath(True)/static/js/libs/checked-list-group.js" type="text/javascript" charset="utf-8"></script>
     <script src="$get_homepath(True)/static/js/common.js" type="text/javascript" charset="utf-8"></script>
@@ -82,9 +82,9 @@ $:template_helper.call('header_hook')
 </head>
 
 <body>
-    <header>
-        <div class="navbar navbar-expand-sm bg-dark navbar-dark navbar-default navbar-static-top" style="padding:0 !important;">
-            <div class="container-fluid" style="margin-left: 0px;margin-right: 0px;">
+    <div id="wrapper">
+        <div class="navbar navbar-expand-sm bg-dark navbar-dark navbar-default navbar-static-top" style="margin-bottom:20px;">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="">
                         <span class="navbar-toggler-icon"></span>
@@ -110,7 +110,6 @@ $:template_helper.call('header_hook')
                         </div>
                     </div>
                 $else:
-
                     <ol class="nav navbar-nav navbar-right ml-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="dropdownMenuButton">
@@ -132,52 +131,47 @@ $:template_helper.call('header_hook')
                 </div>
             </div>
         </div>
-    </header>
-    <div id="wrapper" style="margin: 20px;">
-        <main class="container-fluid" role="main">
+        <div class="container">
 
-                <div class="page-header" id="banner">
-                    <div class="row">
-                    <div class="col-lg-10 col-md-7 col-sm-6">
-                        $:content
-                    </div>
-                    <div class="col-lg-2 col-md-5 col-sm-6">
-                        <div id="sidebar">
-                            <div id="sidebar_affix">
-                                <div id="sidebar_inner">
-                                    $if "Column" in content:
-                                        $:content.Column
-                                </div>
-                            </div>
+        <div class="page-header" id="banner">
+            <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                $:content
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-6">
+                <div id="sidebar">
+                    <div id="sidebar_affix">
+                        <div id="sidebar_inner">
+                            $if "Column" in content:
+                                $:content.Column
                         </div>
                     </div>
                     </div>
                 </div>
-            </main>
-    </div>
-
-    <footer class="bg-dark navbar-dark">
-        <div class="container">
-            <div class="row">
-                    <div class="col-lg-8 col-md-7 col-sm-6" style="width: 100%">
-                        <p class="navbar-text">
-                            &copy; 2014-2018 Universit&eacute; catholique de Louvain
-                        </p>
-                    </div>
-                    <div class="col-lg-4 col-md-5 col-sm-6">
-                        <p class="navbar-text">
-                            <a target="_blank" href="http://www.inginious.org" class="navbar-link">
-                                $:_("INGInious is distributed under AGPL license")
-                            </a>
-                        </p>
-                    </div>
+                <div class="footer_push"></div>
+            </div>
             </div>
         </div>
+    </div>
+      <footer id="footer" class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+        <div class="container">
+            <div class="col-lg-8 col-md-7 col-sm-6" style="width: 100%">
+                <p class="navbar-text">
+                    &copy; 2014-2018 Universit&eacute; catholique de Louvain
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-6">
+                <p class="navbar-text">
+                    <a target="_blank" href="http://www.inginious.org" class="navbar-link">
+                        $:_("INGInious is distributed under AGPL license")
+                    </a>
+                </p>
+            </div>
+        </div>
+      </footer>
 
-    </footer>
 
-
-
+    </div>
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     $:template_helper.call('javascript_footer')

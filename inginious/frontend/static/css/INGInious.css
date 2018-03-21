@@ -251,12 +251,12 @@ form#task label {
     max-width: 120px;
   }
 }
-.nav-breadcrumb li a {
+.navbar-breadcrumb li a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.nav-breadcrumb li:after {
+.navbar-breadcrumb li:after {
   font: normal normal normal 24px/1 FontAwesome;
   content: "\f105";
   position: absolute;
