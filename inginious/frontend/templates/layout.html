@@ -82,8 +82,8 @@ $:template_helper.call('header_hook')
 </head>
 
 <body>
-    <div id="wrapper">
-        <div class="navbar navbar-expand-sm bg-dark navbar-dark navbar-default navbar-static-top" style="margin-bottom:20px;">
+    <header>
+        <div class="navbar navbar-expand-sm bg-dark navbar-dark navbar-default navbar-static-top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="">
@@ -132,47 +132,52 @@ $:template_helper.call('header_hook')
                 </div>
             </div>
         </div>
-        <div class="container">
+    </header>
+    <div id="wrapper">
+        <main class="container" role="main">
 
-        <div class="page-header" id="banner">
-            <div class="row">
-            <div class="col-lg-8 col-md-7 col-sm-6">
-                $:content
-            </div>
-            <div class="col-lg-4 col-md-5 col-sm-6">
-                <div id="sidebar">
-                    <div id="sidebar_affix">
-                        <div id="sidebar_inner">
-                            $if "Column" in content:
-                                $:content.Column
+                <div class="page-header" id="banner">
+                    <div class="row">
+                    <div class="col-lg-8 col-md-7 col-sm-6">
+                        $:content
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-sm-6">
+                        <div id="sidebar">
+                            <div id="sidebar_affix">
+                                <div id="sidebar_inner">
+                                    $if "Column" in content:
+                                        $:content.Column
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    </div>
                 </div>
-                <div class="footer_push"></div>
-            </div>
-            </div>
-        </div>
+            </main>
     </div>
-      <footer id="footer" class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+
+    <footer class="bg-dark navbar-dark" style="margin-top:100px;">
         <div class="container">
-            <div class="col-lg-8 col-md-7 col-sm-6" style="width: 100%">
-                <p class="navbar-text">
-                    &copy; 2014-2018 Universit&eacute; catholique de Louvain
-                </p>
-            </div>
-            <div class="col-lg-4 col-md-5 col-sm-6">
-                <p class="navbar-text">
-                    <a target="_blank" href="http://www.inginious.org" class="navbar-link">
-                        $:_("INGInious is distributed under AGPL license")
-                    </a>
-                </p>
+            <div class="row">
+                    <div class="col-lg-8 col-md-7 col-sm-6" style="width: 100%">
+                        <p class="navbar-text">
+                            &copy; 2014-2018 Universit&eacute; catholique de Louvain
+                        </p>
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-sm-6">
+                        <p class="navbar-text">
+                            <a target="_blank" href="http://www.inginious.org" class="navbar-link">
+                                $:_("INGInious is distributed under AGPL license")
+                            </a>
+                        </p>
+                    </div>
             </div>
         </div>
 
-      </footer>
+    </footer>
 
 
-    </div>
+
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     $:template_helper.call('javascript_footer')
