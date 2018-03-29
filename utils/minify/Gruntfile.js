@@ -16,7 +16,7 @@ module.exports = function(grunt)
                         '../../inginious/frontend/static/js/libs/tether.min.js',
                         '../../inginious/frontend/static/js/libs/bootstrap.min.js',
                         '../../inginious/frontend/static/js/libs/bootstrap.bundle.min.js',
-                        '../../inginious/frontend/static/js/libs/moment.js',
+                        '../../inginious/frontend/static/js/libs/moment-with-locales.js',
                         '../../inginious/frontend/static/js/libs/bootstrap-datetimepicker.min.js',
                         '../../inginious/frontend/static/js/libs/checked-list-group.js',
                         '../../inginious/frontend/static/js/codemirror/codemirror.js',
