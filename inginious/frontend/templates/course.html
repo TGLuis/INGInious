@@ -71,12 +71,12 @@ $def ColumnF():
 $var Column: $:ColumnF()
 
 $def NavbarF():
-    <ol class="nav navbar-nav nav-breadcrumb">
+    <ol class="nav navbar-nav navbar-breadcrumb">
         $if registered:
-            <li><a href="$get_homepath()/mycourses" title=$:_('"My courses"') data-toggle="tooltip" data-placement="bottom"><i class="fa fa-th-list"></i></a></li>
+            <li><a href="$get_homepath()/mycourses" title=$:_('"My courses"') data-toggle="tooltip" data-placement="bottom" class="nav-link"><i class="fa fa-th-list"></i></a></li>
         $else:
-            <li><a href="$get_homepath()/courselist" title=$:_('"Course list"') data-toggle="tooltip" data-placement="bottom"><i class="fa fa-th-list"></i></a></li>
-        <li class="active"><a href="#">$course.get_name(user_manager.session_language()) <span class="sr-only">$:_("(current)")</span></a></li>
+            <li><a href="$get_homepath()/courselist" title=$:_('"Course list"') data-toggle="tooltip" data-placement="bottom" class="nav-link"><i class="fa fa-th-list"></i></a></li>
+        <li class="active"><a href="#" class="nav-link">$course.get_name(user_manager.session_language()) <span class="sr-only">$:_("(current)")</span></a></li>
     </ol>
 $var Navbar: $:NavbarF()
 

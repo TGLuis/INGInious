@@ -229,13 +229,13 @@ $def ColumnF():
 $var Column: $:ColumnF()
 
 $def NavbarF():
-    <ol class="nav navbar-nav nav-breadcrumb">
+    <ol class="nav navbar-nav navbar-breadcrumb">
         $if registered:
-            <li><a href="$get_homepath()/mycourses" title=$:_('"My courses"') data-toggle="tooltip" data-placement="bottom"><i class="fa fa-th-list"></i></a></li>
+            <li><a href="$get_homepath()/mycourses" title=$:_('"My courses"') class="nav-link" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-th-list"></i></a></li>
         $else:
-            <li><a href="$get_homepath()/courselist" title=$:_('"Course list"') data-toggle="tooltip" data-placement="bottom"><i class="fa fa-th-list"></i></a></li>
-        <li><a href="$get_homepath()/course/$task.get_course().get_id()">$course.get_name(user_manager.session_language())</a></li>
-        <li class="active"><a href="#">$task.get_name(user_manager.session_language()) <span class="sr-only">$:_("(current)")</span></a></li>
+            <li><a href="$get_homepath()/courselist" title=$:_('"Course list"') class="nav-link" data-toggle="tooltip" data-placement="bottom"><i class="fa fa-th-list"></i></a></li>
+        <li><a href="$get_homepath()/course/$task.get_course().get_id()" class="nav-link">$course.get_name(user_manager.session_language())</a></li>
+        <li class="active"><a href="#" class="nav-link">$task.get_name(user_manager.session_language()) <span class="sr-only">$:_("(current)")</span></a></li>
     </ol>
 $var Navbar: $:NavbarF()
 
@@ -326,17 +326,26 @@ $else:
         $ i = i+1
     <input type="hidden" name="@action" value="submit"/>
     $for key, problem in enumerate(task.get_problems()):
-        <div class="panel panel-default problem">
+        <div class="card card-default">
             $if len(task.get_problems()) != 1 or problem.get_name(user_manager.session_language()) != "":
-                <div class="panel-heading">
-                    <h3 class="panel-title">
+                <div class="card-heading">
+                    <h3 class="card-header">
                         $if len(task.get_problems()) != 1:
                             $:_("Question {}").format(str(key+1)):
                         $problem.get_name(user_manager.session_language())
                     </h3>
+
                 </div>
-            <div class="panel-body">
+            <div class="card-body">
                 $:problem.show_input(template_helper, user_manager.session_language(), user_manager.session_username())
+                <div id="task_alert.$problem.get_id()" class="task_alert_problem"></div>
+                $if problem.get_header(user_manager.session_language() !=""):
+                    <div class="row">
+                        $:problem.get_header(user_manager.session_language())
+                        $:problem.show_input(template_helper, user_manager.session_language(), user_manager.session_username())
+                    </div>
+                $else:
+                    $:problem.show_input(template_helper, user_manager.session_language(), user_manager.session_username())
             </div>
         </div>
 
@@ -401,4 +410,15 @@ var problems_types = $:pdict
 $$(document).ready(function() {
     init_task_page("$task.get_evaluate()");
 });
+
+</script>
+
+$# Input random
+$# set up some useful variable that may be used by task author
+<script>
+    var input = {
+        "@lang": "$user_manager.session_language()",
+        "@username": "$user_manager.session_username()",
+        "@random": $input_random_list
+    }
 </script>

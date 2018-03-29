@@ -83,8 +83,8 @@ $:template_helper.call('header_hook')
 
 <body>
     <header>
-        <div class="navbar navbar-expand-sm bg-dark navbar-dark navbar-default navbar-static-top">
-            <div class="container-fluid">
+        <div class="navbar navbar-expand-sm bg-dark navbar-dark navbar-default navbar-static-top" style="padding:0 !important;">
+            <div class="container-fluid" style="margin-left: 0px;margin-right: 0px;">
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="">
                         <span class="navbar-toggler-icon"></span>
@@ -96,7 +96,6 @@ $:template_helper.call('header_hook')
                 $if "Navbar" in content:
                     $:content.Navbar
                 $if user_manager.session_logged_in():
-
                     <div class="nav navbar-nav navbar-right ml-auto">
                         <div class="nav-item dropdown" >
                             <a id="btnGroupDrop1" type="button" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw"></i> $user_manager.session_realname() <span class="caret"></span></a>
@@ -111,6 +110,7 @@ $:template_helper.call('header_hook')
                         </div>
                     </div>
                 $else:
+
                     <ol class="nav navbar-nav navbar-right ml-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="dropdownMenuButton">
@@ -133,15 +133,15 @@ $:template_helper.call('header_hook')
             </div>
         </div>
     </header>
-    <div id="wrapper">
-        <main class="container" role="main">
+    <div id="wrapper" style="margin: 20px;">
+        <main class="container-fluid" role="main">
 
                 <div class="page-header" id="banner">
                     <div class="row">
-                    <div class="col-lg-8 col-md-7 col-sm-6">
+                    <div class="col-lg-10 col-md-7 col-sm-6">
                         $:content
                     </div>
-                    <div class="col-lg-4 col-md-5 col-sm-6">
+                    <div class="col-lg-2 col-md-5 col-sm-6">
                         <div id="sidebar">
                             <div id="sidebar_affix">
                                 <div id="sidebar_inner">
@@ -156,7 +156,7 @@ $:template_helper.call('header_hook')
             </main>
     </div>
 
-    <footer class="bg-dark navbar-dark" style="margin-top:100px;">
+    <footer class="bg-dark navbar-dark">
         <div class="container">
             <div class="row">
                     <div class="col-lg-8 col-md-7 col-sm-6" style="width: 100%">
