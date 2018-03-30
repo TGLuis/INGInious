@@ -63,12 +63,12 @@ $var Navbar: $:NavbarF()
                     $if is_admin:
                         <a href="$get_homepath()/admin/${course.get_id()}/edit/task/$taskid" class="btn btn-primary btn-xs" title=$:_('"Edit task"') data-toggle="tooltip"
                            data-placement="bottom"><i class="fa fa-edit"></i></a>
-                    <a href="$get_homepath()/admin/${course.get_id()}/task/$taskid" class="btn btn-default btn-xs" title=$:_('"View results"') data-toggle="tooltip"
+                    <a href="$get_homepath()/admin/${course.get_id()}/task/$taskid" class="btn btn-outline-primary btn-xs" title=$:_('"View results"') data-toggle="tooltip"
                        data-placement="bottom"><i class="fa fa-users"></i></a>
-                    <a href="$get_homepath()/admin/${course.get_id()}/download$data[taskid]['url']" class="btn btn-default btn-xs" title=$:_('"Download submissions"')
+                    <a href="$get_homepath()/admin/${course.get_id()}/download$data[taskid]['url']" class="btn btn-outline-primary btn-xs" title=$:_('"Download submissions"')
                        data-toggle="tooltip" data-placement="bottom"><i class="fa fa-download"></i></a>
                     $if is_admin:
-                        <a href="$get_homepath()/admin/${course.get_id()}/replay$data[taskid]['url']" class="btn btn-default btn-xs" title=$:_('"Replay submissions"')
+                        <a href="$get_homepath()/admin/${course.get_id()}/replay$data[taskid]['url']" class="btn btn-outline-primary btn-xs" title=$:_('"Replay submissions"')
                            data-toggle="tooltip" data-placement="bottom"><i class="fa fa-refresh"></i></a>
                 </div>
     		</td>
