@@ -14,15 +14,19 @@ $else:
     <ul class="nav nav-tabs" role="tablist">
         <li role="presentation"
             $if not show_aggregations:
-                class="active"
+                class="active nav-item"
+            $else:
+                class="nav-item"
         >
-            <a href="#user_filter" aria-controls="user_filter" role="tab" data-toggle="tab">$:_("Select students")</a>
+            <a class="nav-link" href="#user_filter" aria-controls="user_filter" role="tab" data-toggle="tab">$:_("Select students")</a>
         </li>
         <li role="presentation"
             $if show_aggregations:
-                class="active"
+                class="active nav-item"
+            $else:
+                class="nav-item"
         >
-            <a href="#aggregation_filter" aria-controls="aggregation_filter" role="tab" data-toggle="tab">$:(_('Select classrooms') if use_classrooms else _('Select teams'))</a>
+            <a class="nav-link" href="#aggregation_filter" aria-controls="aggregation_filter" role="tab" data-toggle="tab">$:(_('Select classrooms') if use_classrooms else _('Select teams'))</a>
         </li>
     </ul>
     <div class="btn-group download-tabs-user-aggregation">
