@@ -118,8 +118,8 @@ $var Navbar: $:NavbarF()
 <div id="subproblem_templates" style="display:none">
     $for key, problem_type in problem_types.items():
         <div id="subproblem_$key">
-            <div class="panel panel-default" id="subproblem_well_PID" >
-                <div class="panel-heading" role="tab" id="heading_PID">
+            <div class="card" id="subproblem_well_PID" >
+                <div class="card-header" role="tab" id="heading_PID">
                     <div class="row">
                         <div class="col-md-10" >
                             <span role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_PID" aria-controls="collapse_PID">
@@ -134,7 +134,7 @@ $var Navbar: $:NavbarF()
                     </div>
                 </div>
                 <div id="collapse_PID" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading_PID">
-                    <div class="panel-body">
+                    <div class="card-body">
                         <input type="hidden" name="problem[PID][type]" value="$key"/>
                         <input type="hidden" class="subproblem_order" name="problem[PID][@order]" value="ORDER"/>
                         <div class="form-group">
