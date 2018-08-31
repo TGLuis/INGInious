@@ -339,14 +339,6 @@ $else:
                 </div>
             <div class="card-body">
                 $:problem.show_input(template_helper, user_manager.session_language(), user_manager.session_username())
-                <div id="task_alert.$problem.get_id()" class="task_alert_problem"></div>
-                $if problem.get_header(user_manager.session_language() !=""):
-                    <div class="row">
-                        $:problem.get_header(user_manager.session_language())
-                        $:problem.show_input(template_helper, user_manager.session_language(), user_manager.session_username())
-                    </div>
-                $else:
-                    $:problem.show_input(template_helper, user_manager.session_language(), user_manager.session_username())
             </div>
         </div>
 
